@@ -18,8 +18,6 @@ app.use('/api/clients', clientsRoutes);
 app.use('/api/products', productsRoutes);
 app.use('/api/emprendedores', emprendedoresRoutes);
 
-
-
 app.get('/', (req, res) => {
     res.send('Funciona');
 });
