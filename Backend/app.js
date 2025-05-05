@@ -3,8 +3,11 @@ import db from './config/db.js';
 import clientsRoutes from './routes/clientsRoutes.js';
 import productsRoutes from './routes/productsRoutes.js';
 import emprendedoresRoutes from './routes/emprendedoresRoutes.js'; 
+import cors from "cors";
+
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
