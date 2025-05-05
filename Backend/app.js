@@ -1,7 +1,8 @@
 import express from 'express';
 import db from './config/db.js';
 import clientsRoutes from './routes/clientsRoutes.js';
-import productsRoutes from './routes/productsRoutes.js'; 
+import productsRoutes from './routes/productsRoutes.js';
+import emprendedoresRoutes from './routes/emprendedoresRoutes.js'; 
 const app = express();
 
 app.use(express.json());
@@ -15,6 +16,8 @@ try {
 }
 app.use('/api/clients', clientsRoutes);
 app.use('/api/products', productsRoutes);
+app.use('/api/emprendedores', emprendedoresRoutes);
+
 
 
 app.get('/', (req, res) => {

@@ -14,7 +14,11 @@ const Product = db.define('products', {
   sku: {
     type: DataTypes.STRING(50),
     allowNull: true
-  },
+  },    
+  category: {
+  type: DataTypes.STRING,
+  allowNull: true
+},
   selling_price: {
     type: DataTypes.DECIMAL(10, 2),
     allowNull: false

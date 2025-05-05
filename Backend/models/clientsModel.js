@@ -1,5 +1,7 @@
 import { DataTypes } from 'sequelize';
 import db from '../config/db.js';
+import Emprendedor from "./emprendedorModel.js";
+
 
 const Client = db.define('clients', {
   client_id: {
@@ -35,10 +37,19 @@ const Client = db.define('clients', {
   billing_address: {
     type: DataTypes.STRING(255),
     allowNull: true
-  }
-}, {
+  },
+  emprendedor_id: {
+    type: DataTypes.INTEGER,
+    references: {
+      model: 'emprendedores',
+      key: 'emprendedor_id'
+    }},
   tableName: 'clients',
   timestamps: false
 });
+
+Client.belongsTo(Emprendedor, {
+    foreignKey: "emprendedor_id"
+  });
 
 export default Client;
